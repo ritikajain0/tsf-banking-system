@@ -80,6 +80,8 @@
       $conn = mysqli_connect($servername, $username, $password, $database);
         $sql= "UPDATE `userdetail` SET `Account balance` = `Account balance`+'$amount' WHERE `userdetail`.`Name` = '$receiver'";
         $result = mysqli_query($conn, $sql);
+          $sql= "UPDATE `userdetail` SET `Account balance` = `Account balance`-'$amount' WHERE `userdetail`.`Name` = '$sender'";
+        $result = mysqli_query($conn, $sql);
         if($result)
         {
           echo "update succesfully";
